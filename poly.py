@@ -127,7 +127,6 @@ class LinkedList:
                 return
         new_node.next = current.next
         current.next = new_node
-        new_node = Node(coeff, exp)
 
     # Add a polynomial p to the polynomial and return the resulting polynomial as a new linked list.
     def add(self, p):
