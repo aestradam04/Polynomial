@@ -97,12 +97,17 @@ class Node:
 class LinkedList:
 
     def __init__(self):
+        """
+        Initialize empty LinkedList
+        """
         self.head = None
 
     def insert_term(self, coeff, exp):
+        """
+        Insert a term into the polynomial in descending order
+        """
         if coeff == 0:
             return
-        
         new_node = Node(coeff, exp)
         if self.head is None or self.head.exp < exp:
             new_node.next = self.head
@@ -126,6 +131,10 @@ class LinkedList:
 
     # Add a polynomial p to the polynomial and return the resulting polynomial as a new linked list.
     def add(self, p):
+        """
+        Adds another polynomial to the current polynomial
+        Returns a new LinkedList.
+        """
         result = LinkedList()
         first_p = self.head
         second_p = p.head
@@ -151,8 +160,11 @@ class LinkedList:
                 second_p = second_p.next
 
         return result
-     
     def mult(self, p):
+        """
+        Multiplies the current polynomial by another polynomial 
+        Returns a new LinkedList
+        """
         result = LinkedList()
         ptr1 = self.head
 
@@ -168,6 +180,9 @@ class LinkedList:
         return result
 
     def __str__(self):
+        """
+        Returns plynomial as string
+        """
         terms = []
         current = self.head
         while current is not None:
