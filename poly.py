@@ -119,12 +119,10 @@ class LinkedList:
                 current = current.next
             else:
                 break
-        if current.next is not None:
-            if current.next.exp == exp:
-                current.next.coeff += coeff
-                if current.next.coeff == 0: #remove if zero
-                    current.next = current.next.next
-                return
+        if current.next is not None and current.next.exp == exp:
+            current.next.coeff += coeff
+            if current.next.coeff == 0:
+                current.next = current.next.next
         new_node.next = current.next
         current.next = new_node
 
